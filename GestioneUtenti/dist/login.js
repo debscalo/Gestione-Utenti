@@ -28,6 +28,33 @@ function verificaDatiInseriti() {
         }
     }
 }
+function addUser() {
+    let inputName = document.getElementById("name");
+    let inputSurname = document.getElementById("surname");
+    let inputAddress = document.getElementById("inputAddress");
+    let inputCity = document.getElementById("inputCity");
+    let inputZip = document.getElementById("inputZip");
+    let inputDate = document.getElementById("date");
+    let newUser = {
+        name: inputName.value,
+        surname: inputSurname.value,
+        address: inputAddress.value,
+        city: inputCity.value,
+        zip: inputZip.value,
+        date: new Date(inputDate.value)
+    };
+    exports.userList.push(newUser);
+    setTimeout(redirect, 1000);
+}
+function addLogin() {
+    let inputEmail = document.getElementById("inputEmail4");
+    let inputPassword = document.getElementById("inputPassword4");
+    let newLogin = {
+        email: inputEmail.value,
+        password: inputPassword.value
+    };
+    credenziali.push(newLogin);
+}
 let butttonSignIn = document.getElementById('signIn');
 debugger;
 function redirect() {
