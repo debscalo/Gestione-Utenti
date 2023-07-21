@@ -1,4 +1,4 @@
-import { userList } from "./login";
+
 
 function userListRender() { 
     let dati = document.querySelector(".usersList"); 

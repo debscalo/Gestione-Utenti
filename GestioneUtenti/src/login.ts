@@ -20,7 +20,7 @@ let credenziali: Login[] =[
     }
 ]
 
-export let userList: User[] = [
+ let userList: User[] = [
     {
         name: "Giovanni",
         surname: "Rossi",
