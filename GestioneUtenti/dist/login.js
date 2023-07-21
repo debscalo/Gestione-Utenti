@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userList = void 0;
 ;
 ;
 let credenziali = [
@@ -7,7 +9,7 @@ let credenziali = [
         password: "ciao"
     }
 ];
-let userList = [
+exports.userList = [
     {
         name: "Giovanni",
         surname: "Rossi",
@@ -25,33 +27,6 @@ function verificaDatiInseriti() {
             window.location.href = 'home.html';
         }
     }
-}
-function addUser() {
-    let inputName = document.getElementById("name");
-    let inputSurname = document.getElementById("surname");
-    let inputAddress = document.getElementById("inputAddress");
-    let inputCity = document.getElementById("inputCity");
-    let inputZip = document.getElementById("inputZip");
-    let inputDate = document.getElementById("date");
-    let newUser = {
-        name: inputName.value,
-        surname: inputSurname.value,
-        address: inputAddress.value,
-        city: inputCity.value,
-        zip: inputZip.value,
-        date: new Date(inputDate.value)
-    };
-    userList.push(newUser);
-    setTimeout(redirect, 1000);
-}
-function addLogin() {
-    let inputEmail = document.getElementById("inputEmail4");
-    let inputPassword = document.getElementById("inputPassword4");
-    let newLogin = {
-        email: inputEmail.value,
-        password: inputPassword.value
-    };
-    credenziali.push(newLogin);
 }
 let butttonSignIn = document.getElementById('signIn');
 debugger;
