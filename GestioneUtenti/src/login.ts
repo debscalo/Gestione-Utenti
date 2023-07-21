@@ -78,7 +78,7 @@ function addLogin(){
 
 
 let butttonSignIn = document.getElementById('signIn');
-debugger;
+
 
 function redirect(){
     window.location.href = "login.html";

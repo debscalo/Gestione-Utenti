@@ -41,7 +41,7 @@ function addUser() {
         zip: inputZip.value,
         date: new Date(inputDate.value)
     };
-    exports.userList.push(newUser);
+    userList.push(newUser);
     addLogin();
     setTimeout(redirect, 1000);
 }
@@ -55,7 +55,6 @@ function addLogin() {
     credenziali.push(newLogin);
 }
 let butttonSignIn = document.getElementById('signIn');
-debugger;
 function redirect() {
     window.location.href = "login.html";
 }
