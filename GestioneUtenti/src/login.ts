@@ -20,7 +20,7 @@ let credenziali: Login[] =[
     }
 ]
 
-let userList: User[] = [
+export let userList: User[] = [
     {
         name: "Giovanni",
         surname: "Rossi",
@@ -46,7 +46,7 @@ function addUser(){
     let name = document.getElementById("name") as HTMLInputElement;
     let surname = document.getElementById("surname") as HTMLInputElement;
     let address = document.getElementById("inputAddress") as HTMLInputElement;
-    let 
+     
 }
 
 
