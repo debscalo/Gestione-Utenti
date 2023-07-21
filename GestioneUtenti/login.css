@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    font-style: italic;
+    font-weight: 700;
+    align-items: center;
+    align-content: center;
+    
+}
+
+#title{
+    text-align: center;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+#login{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}

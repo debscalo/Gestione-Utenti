@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.title{
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+#signIn{
+   margin-left: 24rem; 
+   margin-top: 3rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+
+}
