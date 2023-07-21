@@ -60,6 +60,7 @@ function addUser() {
     }
 
     userList.push(newUser);
+    addLogin();
     setTimeout(redirect, 1000);
 }
 

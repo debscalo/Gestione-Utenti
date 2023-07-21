@@ -44,6 +44,7 @@ function addUser() {
         date: new Date(inputDate.value)
     };
     exports.userList.push(newUser);
+    addLogin();
     setTimeout(redirect, 1000);
 }
 function addLogin() {
