@@ -9,8 +9,8 @@ interface User {
     surname: string
     address: string,
     city: string,
-    state: string,
-    zip: string
+    zip: string,
+    date: Date
 };
 
 let credenziali: Login[] =[
@@ -29,6 +29,10 @@ function verificaDatiInseriti(){
         }
     }
 
+}
+
+function addUser(){
+    let
 }
 
 
