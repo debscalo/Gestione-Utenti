@@ -1,4 +1,4 @@
-import { credenziali } from singup;
+
 interface Login {
     email: string
     password: string;
@@ -13,18 +13,23 @@ interface User {
     zip: string
 };
 
+let credenziali: Login[] =[
+    {
+        email: "ciao@email.com",
+        password: "ciao"
+    }
+]
+
 function verificaDatiInseriti(){
     let email = document.getElementById("email") as HTMLInputElement;
     let password = document.getElementById("password") as HTMLInputElement;
-    for (let i = 0 ; i< credenziali.lenght;i++){
+    for (let i = 0 ; i< credenziali.length;i++){
         if (credenziali[i].email== email.value && credenziali[i].password== password.value){
             window.location.href = 'home.html'
         }
     }
 
 }
-
-
 
 
 
