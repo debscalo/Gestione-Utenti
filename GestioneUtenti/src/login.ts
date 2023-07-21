@@ -1,4 +1,17 @@
 import { credenziali } from singup;
+interface Login {
+    email: string
+    password: string;
+}; 
+
+interface User {
+    name: string,
+    surname: string
+    address: string,
+    city: string,
+    state: string,
+    zip: string
+};
 
 function verificaDatiInseriti(){
     let email = document.getElementById("email") as HTMLInputElement;
@@ -11,6 +24,15 @@ function verificaDatiInseriti(){
 
 }
 
+
+
+
+
+let butttonSignIn= document.getElementById('signIn');
+if(butttonSignIn)
+butttonSignIn.addEventListener('click', function(){
+    window.location.href = 'login.html'
+});
 
 
 let login = document.getElementById("login");
