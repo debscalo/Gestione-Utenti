@@ -20,6 +20,17 @@ let credenziali: Login[] =[
     }
 ]
 
+let userList: User[] = [
+    {
+        name: "Giovanni",
+        surname: "Rossi",
+        address: "Via Marte, 15",
+        city: "Roma",
+        zip: "00159",
+        date: new Date("1984-04-20")
+    }
+]
+
 function verificaDatiInseriti(){
     let email = document.getElementById("email") as HTMLInputElement;
     let password = document.getElementById("password") as HTMLInputElement;
@@ -32,7 +43,10 @@ function verificaDatiInseriti(){
 }
 
 function addUser(){
-    let
+    let name = document.getElementById("name") as HTMLInputElement;
+    let surname = document.getElementById("surname") as HTMLInputElement;
+    let address = document.getElementById("inputAddress") as HTMLInputElement;
+    let 
 }
 
 
