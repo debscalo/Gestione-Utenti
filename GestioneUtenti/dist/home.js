@@ -1,11 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const login_1 = require("./login");
 function userListRender() {
     let dati = document.querySelector(".usersList");
     if (dati != null)
         dati.innerHTML = "";
-    login_1.userList.forEach(elem => {
+    userList.forEach(elem => {
         let listaItem = document.createElement("div");
         listaItem.setAttribute("class", "row");
         listaItem.setAttribute("name", "userList");

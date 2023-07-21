@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.userList = void 0;
 ;
 ;
 let credenziali = [
@@ -9,7 +7,7 @@ let credenziali = [
         password: "ciao"
     }
 ];
-exports.userList = [
+let userList = [
     {
         name: "Giovanni",
         surname: "Rossi",
