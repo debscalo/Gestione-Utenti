@@ -1,11 +1,58 @@
 "use strict";
-
-
+class UserDataMAnagement {
+    constructor() {
+        this.userData = [
+            {
+                name: "Giovanni",
+                surname: "Rossi",
+                address: "Via Marte, 15",
+                city: "Roma",
+                zip: "00159",
+                date: new Date("1984-04-20")
+            },
+            {
+                name: "Aldo",
+                surname: "Verdi",
+                address: "Via Marte, 15",
+                city: "Roma",
+                zip: "00159",
+                date: new Date("1984-04-20")
+            },
+            {
+                name: "Giacomo",
+                surname: "Gialli",
+                address: "Via Marte, 15",
+                city: "Roma",
+                zip: "00159",
+                date: new Date("1984-04-20")
+            }
+        ];
+    }
+    getUsers() {
+        return this.userData;
+    }
+    setUsers(userData) {
+        this.userData.push(userData);
+    }
+    searchUser(stringaRicerca) {
+        let foundUsers = [];
+        for (let i = 0; i < this.userData.length; i++) {
+            if (this.userData[i].surname.includes(stringaRicerca)) {
+                foundUsers.push(this.userData[i]);
+            }
+        }
+        return foundUsers;
+    }
+}
+let userDataManagement = new UserDataMAnagement();
 function userListRender() {
     let dati = document.querySelector(".usersList");
     if (dati != null)
         dati.innerHTML = "";
-    userList.forEach(elem => {
+    let searchForm = document.getElementById("mySearch");
+    let stringa = searchForm.value;
+    let users = userDataManagement.searchUser(stringa);
+    users.forEach(elem => {
         let listaItem = document.createElement("div");
         listaItem.setAttribute("class", "row");
         listaItem.setAttribute("name", "userList");
@@ -20,8 +67,7 @@ function userListRender() {
             dati.appendChild(listaItem);
     });
 }
-
-
-
-
 userListRender();
+let searchForm = document.getElementById("mySearch");
+if (searchForm !== null)
+    searchForm.addEventListener("input", userListRender);
