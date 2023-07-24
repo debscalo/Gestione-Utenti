@@ -20,7 +20,7 @@ let credenziali: Login[] = [
     }
 ]
 
- let userList: User[] = [
+let userList: User[] = [
     {
         name: "Giovanni",
         surname: "Rossi",
@@ -37,9 +37,28 @@ function verificaDatiInseriti() {
     for (let i = 0; i < credenziali.length; i++) {
         if (credenziali[i].email == email.value && credenziali[i].password == password.value) {
             window.location.href = 'home.html'
+        } else {
+            const alertTrigger = document.getElementById('login')
+            if (alertTrigger) {
+                appendAlert('Incorrect email or password', 'danger');
+            }
         }
     }
 
+}
+
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+const appendAlert = (message: string, type: string) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+    ].join('')
+    if(alertPlaceholder)
+    alertPlaceholder.append(wrapper)
+    setTimeout(redirect, 2000);
 }
 
 function addUser() {
@@ -64,7 +83,7 @@ function addUser() {
     setTimeout(redirect, 1000);
 }
 
-function addLogin(){
+function addLogin() {
     let inputEmail = document.getElementById("inputEmail4") as HTMLInputElement;
     let inputPassword = document.getElementById("inputPassword4") as HTMLInputElement;
 
@@ -78,9 +97,8 @@ function addLogin(){
 
 
 let butttonSignIn = document.getElementById('signIn');
-debugger;
 
-function redirect(){
+function redirect() {
     window.location.href = "login.html";
 }
 

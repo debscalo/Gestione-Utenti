@@ -24,8 +24,27 @@ function verificaDatiInseriti() {
         if (credenziali[i].email == email.value && credenziali[i].password == password.value) {
             window.location.href = 'home.html';
         }
+        else {
+            const alertTrigger = document.getElementById('login');
+            if (alertTrigger) {
+                appendAlert('Incorrect email or password', 'danger');
+            }
+        }
     }
 }
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+    ].join('');
+    if (alertPlaceholder)
+        alertPlaceholder.append(wrapper);
+    setTimeout(redirect, 2000);
+};
 function addUser() {
     let inputName = document.getElementById("name");
     let inputSurname = document.getElementById("surname");
@@ -41,7 +60,7 @@ function addUser() {
         zip: inputZip.value,
         date: new Date(inputDate.value)
     };
-    exports.userList.push(newUser);
+    userList.push(newUser);
     addLogin();
     setTimeout(redirect, 1000);
 }
@@ -55,7 +74,6 @@ function addLogin() {
     credenziali.push(newLogin);
 }
 let butttonSignIn = document.getElementById('signIn');
-debugger;
 function redirect() {
     window.location.href = "login.html";
 }
