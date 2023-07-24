@@ -1,10 +1,19 @@
+import { UserDataMAnagement } from "./gestioneUtenti";
 
+
+  
+  
+  
+  let userDataMAnagement = new UserDataMAnagement();
 
 function userListRender() { 
     let dati = document.querySelector(".usersList"); 
     if (dati != null) 
-        dati.innerHTML = ""; 
-    userList.forEach(elem => { 
+        dati.innerHTML = "";
+        let searchForm = document.getElementById("mySearch") as HTMLInputElement;
+        let stringa = searchForm.value;
+        let users =  userDataMAnagement.searchUser(stringa) 
+                users.forEach(elem => { 
         let listaItem = document.createElement("div"); 
         listaItem.setAttribute("class", "row"); 
         listaItem.setAttribute("name", "userList"); 
@@ -26,3 +35,7 @@ function userListRender() {
 
 userListRender();
 
+
+let searchForm = document.getElementById("mySearch");
+if (searchForm !== null)
+  searchForm.addEventListener("input", userListRender);
