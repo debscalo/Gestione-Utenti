@@ -1,4 +1,6 @@
 "use strict";
+
+
 function userListRender() {
     let dati = document.querySelector(".usersList");
     if (dati != null)
@@ -18,4 +20,11 @@ function userListRender() {
             dati.appendChild(listaItem);
     });
 }
+
+
+
+
 userListRender();
+let searchForm = document.getElementById("mySearch");
+if (searchForm !== null)
+    searchForm.addEventListener("input", userListRender);
